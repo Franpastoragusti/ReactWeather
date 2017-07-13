@@ -11,11 +11,13 @@ export default class SearchBar extends Component {
         super(props);
 
         this.state = {term: ''};
+
+        this.onImputChange = this.onImputChange.bind(this)
     }
 
     onImputChange(event){
         console.log(event.target.value)
-        // this.setState({term: event.target.value})
+        this.setState({term: event.target.value})
     }
 
     render(){
@@ -23,7 +25,7 @@ export default class SearchBar extends Component {
         return(
             <form className="input-group">
                 <input
-                    placeholder="Get a five-day forecast in ypur favorite cities"
+                    placeholder="Get a five-day forecast in your favorite cities"
                     className="form-control"
                     value={this.state.term}
                     onChange={this.onImputChange}/>
